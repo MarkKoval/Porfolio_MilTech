@@ -42,8 +42,8 @@ The app is optimized for a desktop-first presentation but remains usable on tabl
 ## Quick Visuals
 
 <p align="center">
-  <img src="docs/screenshots/hero-desktop.png" alt="Hero screenshot" width="100%" />
-  <img src="docs/screenshots/mobile-home.png" alt="Mobile screenshot" width="100%" />
+  <img src="docs/screenshots/hero-desktop.png" alt="Hero screenshot" width="70%" />
+  <img src="docs/screenshots/mobile-home.png" alt="Mobile screenshot" width="31%" />
 </p>
 
 ## Stack
@@ -134,24 +134,6 @@ SECTIONS:
 - Experience
 - Contact Link
 ```
-
-## Screenshots
-
-### Hero
-
-![Hero](docs/screenshots/hero-desktop.png)
-
-### Full Page
-
-![Full Page](docs/screenshots/home-full.png)
-
-### Contact
-
-![Contact](docs/screenshots/contact.png)
-
-### Mobile
-
-![Mobile](docs/screenshots/mobile-home.png)
 
 ## Project Structure
 
@@ -362,8 +344,6 @@ At the time of the latest check, the production build completed successfully.
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=MarkKoval&hide_border=true&bg_color=0A0A0A&color=E0E0E0&line=FF8C00&point=4B5320&area=true&area_color=4B5320" alt="Activity graph" />
 </div>
-
-![snake gif](https://github.com/MarkKoval/MarkKoval/blob/output/github-contribution-grid-snake.svg)
 
 <details>
   <summary><b>Contact</b></summary>

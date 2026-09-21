@@ -15,9 +15,9 @@ export const heroData = {
 };
 
 export const heroStats = [
-  { value: '2+', label: 'Years In Field' },
-  { value: '4', label: 'UAV Programs' },
-  { value: '4', label: 'Airframe Classes' },
+  { value: '3+', label: 'Years In Field' },
+  { value: '6', label: 'UAV Programs' },
+  { value: '5', label: 'Airframe Classes' },
   { value: '24/7', label: 'Operational Mode' },
 ];
 

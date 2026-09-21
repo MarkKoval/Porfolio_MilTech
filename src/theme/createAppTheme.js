@@ -50,10 +50,11 @@ export function createAppTheme(isMiltechMode) {
     typography: {
       fontFamily: '"Rajdhani", "Arial Narrow", sans-serif',
       h1: {
-        fontWeight: 700,
+        fontFamily: '"Black Ops One", "Rajdhani", "Arial Narrow", sans-serif',
+        fontWeight: 400,
         fontSize: '3rem',
-        lineHeight: 0.95,
-        letterSpacing: '0.08em',
+        lineHeight: 1.05,
+        letterSpacing: '0.04em',
         textTransform: 'uppercase',
         [baseTheme.breakpoints.down('md')]: {
           fontSize: '2.25rem',
@@ -73,16 +74,17 @@ export function createAppTheme(isMiltechMode) {
         },
       },
       h3: {
-        fontWeight: 700,
-        fontSize: '2rem',
-        lineHeight: 1.08,
-        letterSpacing: '0.08em',
+        fontFamily: '"Black Ops One", "Rajdhani", "Arial Narrow", sans-serif',
+        fontWeight: 400,
+        fontSize: '1.85rem',
+        lineHeight: 1.15,
+        letterSpacing: '0.03em',
         textTransform: 'uppercase',
         [baseTheme.breakpoints.down('md')]: {
-          fontSize: '1.6rem',
+          fontSize: '1.5rem',
         },
         [baseTheme.breakpoints.down('sm')]: {
-          fontSize: '1.375rem',
+          fontSize: '1.25rem',
         },
       },
       h4: {

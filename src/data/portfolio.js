@@ -1,20 +1,31 @@
 export const heroData = {
   name: 'Mark Koval',
-  title: 'UAV Systems Engineer / Autonomous Systems Developer',
-  tagline: 'Autonomous Aerial Systems / Swarm Intelligence / MAVLink Control',
+  title: 'UAV Engineer / UAV Pilot / UAV Electronics',
+  tagline: 'Autonomous Aerial Systems / Interceptor & Swarm UAVs / MAVLink Flight Control',
   classification: 'UNCLASSIFIED // ENGINEERING PROFILE',
   labels: [
     { key: 'STATUS', value: 'ACTIVE' },
     { key: 'LINK', value: 'STABLE' },
     { key: 'MODE', value: 'AUTONOMOUS' },
   ],
+  currentRole: {
+    label: 'CURRENT ASSIGNMENT',
+    value: 'R&D Engineer @ Twist Robotics',
+  },
 };
 
+export const heroStats = [
+  { value: '2+', label: 'Years In Field' },
+  { value: '4', label: 'UAV Programs' },
+  { value: '4', label: 'Airframe Classes' },
+  { value: '24/7', label: 'Operational Mode' },
+];
+
 export const summaryLines = [
-  'UAV systems engineer with 2+ years of hands-on work across full-cycle drone development.',
-  'Builds reliable autonomous aerial systems through hardware integration, flight-control tuning, and real-time communication.',
-  'Experienced with both electric and internal combustion UAV platforms, with emphasis on stability, fault tolerance, and field performance.',
-  'Core domains include MAVLink control systems, swarm coordination, telemetry pipelines, and simulation environments.',
+  'Engineer with hands-on experience across the UAV spectrum — fixed-wing, interceptor, and quadcopter airframes, electric and internal-combustion.',
+  'Specializes in assembling and configuring autopilots (ArduPilot, Matek, Pixhawk, Cube) and calibrating flight-control systems for stability under real load.',
+  'Builds autonomous aerial systems through hardware integration, MAVLink command architecture, swarm coordination, and real-time telemetry pipelines.',
+  'Background spans 3D modeling (Blender, Fusion 360), Python-based analysis tooling, and software development — bridging airframe engineering with mission software.',
 ];
 
 export const skillGroups = [
@@ -24,11 +35,11 @@ export const skillGroups = [
       'Autonomous Flight Systems',
       'MAVLink Communication Architecture',
       'UAV Swarm Coordination',
+      'Drone Piloting (Manual / Semi-Auto / Auto)',
+      'Military Aircraft Systems',
       'Real-Time Telemetry Systems',
       'Flight Controller Integration',
-      'Hardware / Software Co-Design',
       'SITL Simulation & Testing',
-      'Flight Data Analysis',
     ],
   },
   {
@@ -41,12 +52,13 @@ export const skillGroups = [
       'ArduPilot (advanced configuration & tuning)',
       'MAVLink (low-level communication)',
       'Python (pymavlink, sklearn, matplotlib)',
+      'JavaScript / React (front-end tooling)',
       'SITL (Linux simulation)',
     ],
   },
   {
     title: 'Tools',
-    items: ['customTkinter (control interfaces)', 'Blender (3D modeling)', 'Fusion 360', 'RealFlight Evolution'],
+    items: ['customTkinter (control interfaces)', 'Blender (3D modeling)', 'Autodesk Fusion 360', 'RealFlight Evolution'],
   },
 ];
 
@@ -130,26 +142,62 @@ export const missionControl = {
   ],
 };
 
-export const experience = {
-  title: 'UAV Systems Engineer (Independent R&D)',
-  points: [
-    'Full-cycle UAV development from assembly and integration through deployment.',
-    'Flight controller setup, calibration, and tuning across multiple FC platforms.',
-    'MAVLink-based control and communication system development.',
-    'SITL simulation workflows and test pipelines.',
-    'Flight log analysis and performance optimization.',
-  ],
-  operational: ['Manual control', 'Semi-autonomous flight', 'Fully autonomous missions'],
-  distinguishing: [
-    'Combines hardware and software engineering.',
-    'Grounded in real flight work, not simulation-only development.',
-    'Works at the protocol level with MAVLink and autopilot interfaces.',
-    'Engineering-first approach focused on autonomy and swarm systems.',
-  ],
+export const experienceTimeline = [
+  {
+    role: 'R&D Engineer',
+    org: 'Twist Robotics',
+    period: 'Oct 2025 — Present',
+    duration: 'Full-time',
+    status: 'ACTIVE',
+    points: [
+      'Research and development role focused on UAV systems engineering.',
+      'Applies flight-control, autopilot, and swarm-coordination background to production R&D work.',
+    ],
+  },
+  {
+    role: 'UAV Systems Engineer',
+    org: 'Independent R&D',
+    period: 'Full-Cycle Projects',
+    duration: 'Ongoing',
+    status: 'ACTIVE',
+    points: [
+      'Full-cycle UAV development from assembly and integration through deployment.',
+      'Flight controller setup, calibration, and tuning across multiple FC platforms.',
+      'MAVLink-based control and communication system development.',
+      'SITL simulation workflows and test pipelines.',
+      'Flight log analysis and performance optimization.',
+    ],
+  },
+  {
+    role: 'Freelance Web Developer',
+    org: 'Fiverr',
+    period: 'Mar 2022 — Jul 2023',
+    duration: '1 yr 5 mos · Remote · Lviv, Ukraine',
+    status: 'COMPLETED',
+    points: [
+      'Delivered custom portfolio, e-commerce, and order-management web builds for international clients.',
+      'Front-end development in HTML5, JavaScript, and React.',
+    ],
+  },
+];
+
+export const education = {
+  school: 'Lviv Polytechnic National University',
+  note: 'Engineering education foundation supporting the hardware / software systems work above.',
 };
 
+export const operationalExperience = ['Manual control', 'Semi-autonomous flight', 'Fully autonomous missions'];
+
+export const distinguishingFactors = [
+  'Combines hardware and software engineering.',
+  'Grounded in real flight work, not simulation-only development.',
+  'Works at the protocol level with MAVLink and autopilot interfaces.',
+  'Engineering-first approach focused on autonomy and swarm systems.',
+];
+
 export const contactItems = [
-  { label: 'Email', value: 'mark.mil.uav.tech@gmail.com', href: 'mailto:mark.mil.uav.tech@gmail.com' },
+  { label: 'Email', value: 'marekmark22@gmail.com', href: 'mailto:marekmark22@gmail.com' },
+  { label: 'LinkedIn', value: '/in/kovalmark', href: 'https://www.linkedin.com/in/kovalmark/' },
   { label: 'Telegram', value: '@kovalmarkk', href: 'https://t.me/kovalmarkk' },
   { label: 'Location', value: 'Lviv, Ukraine' },
 ];

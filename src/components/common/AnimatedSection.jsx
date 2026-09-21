@@ -37,6 +37,29 @@ export const staggerItemVariants = {
   },
 };
 
+export const fadeInLeftVariants = {
+  hidden: { opacity: 0, x: -28 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.55,
+      ease: 'easeOut',
+    },
+  },
+};
+
+export const drawLineVariants = {
+  hidden: { scaleY: 0 },
+  visible: {
+    scaleY: 1,
+    transition: {
+      duration: 1.1,
+      ease: 'easeInOut',
+    },
+  },
+};
+
 export function AnimatedSection({
   children,
   variants = fadeUpVariants,

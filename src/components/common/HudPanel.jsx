@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material';
 
-export function HudPanel({ title, label, children, minHeight, sx }) {
+export function HudPanel({ title, label, status, children, minHeight, sx }) {
   return (
     <Box
       className="hud-panel"
@@ -17,6 +17,8 @@ export function HudPanel({ title, label, children, minHeight, sx }) {
     >
       <Box className="panel-corner panel-corner--tl" />
       <Box className="panel-corner panel-corner--tr" />
+      <Box className="panel-corner panel-corner--bl" />
+      <Box className="panel-corner panel-corner--br" />
       <Stack
         direction="row"
         alignItems="center"
@@ -25,11 +27,21 @@ export function HudPanel({ title, label, children, minHeight, sx }) {
         sx={{ mb: 2 }}
       >
         <Typography variant="subtitle1">{title}</Typography>
-        {label && (
-          <Typography variant="overline" color="text.secondary">
-            {label}
-          </Typography>
-        )}
+        <Stack direction="row" alignItems="center" spacing={1.25}>
+          {status && (
+            <Stack direction="row" alignItems="center" spacing={0.6}>
+              <Box className={status === 'ACTIVE' ? 'status-dot status-dot--live' : 'status-dot'} />
+              <Typography variant="overline" color="text.secondary">
+                {status}
+              </Typography>
+            </Stack>
+          )}
+          {label && (
+            <Typography variant="overline" color="text.secondary">
+              {label}
+            </Typography>
+          )}
+        </Stack>
       </Stack>
       {children}
     </Box>

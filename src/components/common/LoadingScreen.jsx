@@ -1,6 +1,8 @@
 import { Box, LinearProgress, Stack, Typography } from '@mui/material';
+import { useDecryptText } from '../../hooks/useDecryptText';
 
 export function LoadingScreen({ progress, classification }) {
+  const bootLine = useDecryptText('INITIALIZING SYSTEM...', { active: true, duration: 900 });
   return (
     <Box
       sx={{
@@ -26,7 +28,9 @@ export function LoadingScreen({ progress, classification }) {
           <Typography variant="overline" color="text.secondary">
             {classification}
           </Typography>
-          <Typography variant="h3">Initializing System...</Typography>
+          <Typography variant="h3" className="decrypt-text" sx={{ fontFamily: '"IBM Plex Mono", monospace' }}>
+            {bootLine}
+          </Typography>
           <Typography variant="body2" color="text.secondary">
             Loading command interface, telemetry modules, and engineering profile data.
           </Typography>

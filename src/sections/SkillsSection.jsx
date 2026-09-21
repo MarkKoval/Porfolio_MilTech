@@ -20,8 +20,8 @@ export function SkillsSection({ groups }) {
                 <HudPanel
                   title={group.title}
                   label="Active"
-                  minHeight={{ xs: 'auto', md: 400 }}
-                  sx={{ height: { xs: 'auto', md: 400 } }}
+                  minHeight={{ xs: 'auto', md: 340 }}
+                  sx={{ height: '100%' }}
                 >
                   <Stack spacing={1.25}>
                     {group.items.map((item) => (

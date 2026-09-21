@@ -1,11 +1,22 @@
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import PlaceIcon from '@mui/icons-material/Place';
 import SendIcon from '@mui/icons-material/Send';
+import TelegramIcon from '@mui/icons-material/Telegram';
 import { Box, Button, Grid, Link, Stack, TextField, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { AnimatedSection, staggerContainerVariants, staggerItemVariants } from '../components/common/AnimatedSection';
 import { HudPanel } from '../components/common/HudPanel';
 import { SectionShell } from '../components/common/SectionShell';
+
+const iconByLabel = {
+  Email: EmailIcon,
+  LinkedIn: LinkedInIcon,
+  Telegram: TelegramIcon,
+  Location: PlaceIcon,
+};
 
 export function ContactSection({ items }) {
   const [emailDraft, setEmailDraft] = useState({
@@ -34,11 +45,14 @@ export function ContactSection({ items }) {
     >
       <AnimatedSection variants={staggerContainerVariants}>
         <Grid container spacing={{ xs: 2, md: 2.5 }}>
-          {items.map((item) => (
-            <Grid key={item.label} item xs={12} md={4} sx={{ display: 'flex' }}>
+          {items.map((item) => {
+            const Icon = iconByLabel[item.label];
+            return (
+            <Grid key={item.label} item xs={12} sm={6} md={3} sx={{ display: 'flex' }}>
               <Box component={motion.div} variants={staggerItemVariants} sx={{ width: '100%', height: '100%' }}>
                 <HudPanel title={item.label} label="Stable" minHeight="100%" sx={{ height: '100%' }}>
-                  <Stack spacing={1}>
+                  <Stack spacing={1} alignItems={{ xs: 'center', md: 'flex-start' }}>
+                    {Icon && <Icon sx={{ color: 'secondary.main', fontSize: 22 }} />}
                     {item.href ? (
                       <Link
                         href={item.href}
@@ -52,6 +66,7 @@ export function ContactSection({ items }) {
                           gap: 0.75,
                           justifyContent: { xs: 'center', md: 'flex-start' },
                           fontSize: { xs: '1rem', md: '1.1rem' },
+                          wordBreak: 'break-word',
                         }}
                       >
                         {item.value}
@@ -64,7 +79,8 @@ export function ContactSection({ items }) {
                 </HudPanel>
               </Box>
             </Grid>
-          ))}
+            );
+          })}
           <Grid item xs={12}>
             <Box component={motion.div} variants={staggerItemVariants} sx={{ width: '100%' }}>
               <HudPanel title="Write An Email" label="Direct Link">

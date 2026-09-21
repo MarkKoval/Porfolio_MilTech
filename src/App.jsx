@@ -4,7 +4,17 @@ import { Suspense, lazy, useEffect, useMemo, useState } from 'react';
 import { LoadingScreen } from './components/common/LoadingScreen';
 import { ModeSwitch } from './components/common/ModeSwitch';
 import { CustomCursor } from './components/common/CustomCursor';
-import { contactItems, experience, heroData, projects, skillGroups, summaryLines } from './data/portfolio';
+import {
+  contactItems,
+  distinguishingFactors,
+  education,
+  experienceTimeline,
+  heroData,
+  operationalExperience,
+  projects,
+  skillGroups,
+  summaryLines,
+} from './data/portfolio';
 import { AboutSection } from './sections/AboutSection';
 import { ContactSection } from './sections/ContactSection';
 import { ExperienceSection } from './sections/ExperienceSection';
@@ -45,9 +55,9 @@ function Header({ isMiltechMode, onToggle }) {
           >
             <Stack direction="row" spacing={1.5} alignItems="center">
               <Stack spacing={0.1}>
-                <Typography variant="subtitle1">Mark Koval</Typography>
+                <Typography variant="subtitle1">{heroData.name}</Typography>
                 <Typography variant="overline" color="text.secondary" sx={{ display: { xs: 'none', sm: 'block' } }}>
-                  UAV Systems Engineer / Autonomous Systems Developer
+                  {heroData.title}
                 </Typography>
               </Stack>
             </Stack>
@@ -105,7 +115,9 @@ export default function App() {
           <Suspense fallback={null}>
             <UAVScene isMiltechMode={isMiltechMode} assetPath={uavAssetPath} />
           </Suspense>
+          <Box className="camo-overlay" />
           <Box className="grid-overlay" />
+          <Box className="noise-overlay" />
           <Header isMiltechMode={isMiltechMode} onToggle={() => setIsMiltechMode((value) => !value)} />
           <Box component="main" sx={{ position: 'relative', zIndex: 1 }}>
             <HeroSection data={heroData} isMiltechMode={isMiltechMode} />
@@ -113,7 +125,12 @@ export default function App() {
             <SkillsSection groups={skillGroups} />
             <ProjectsSection projects={projects} />
             <MissionControlSection />
-            <ExperienceSection experience={experience} />
+            <ExperienceSection
+              timeline={experienceTimeline}
+              education={education}
+              operational={operationalExperience}
+              distinguishing={distinguishingFactors}
+            />
             <ContactSection items={contactItems} />
           </Box>
           <Box sx={{ position: 'relative', zIndex: 1, borderTop: '1px solid', borderColor: 'divider' }}>

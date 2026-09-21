@@ -1,7 +1,10 @@
 import EastIcon from '@mui/icons-material/East';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
-import { Box, Button, Chip, Container, Stack, Typography } from '@mui/material';
-import { AnimatedSection } from '../components/common/AnimatedSection';
+import { Box, Button, Chip, Container, Divider, Grid, Stack, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
+import { AnimatedSection, staggerContainerVariants, staggerItemVariants } from '../components/common/AnimatedSection';
+import { DecryptText } from '../components/common/DecryptText';
+import { heroStats } from '../data/portfolio';
 
 export function HeroSection({ data, isMiltechMode }) {
   return (
@@ -23,7 +26,7 @@ export function HeroSection({ data, isMiltechMode }) {
         <AnimatedSection transition={{ duration: 0.8, ease: 'easeOut' }}>
           <Stack
             spacing={{ xs: 3, md: 4 }}
-            maxWidth={760}
+            maxWidth={780}
             sx={{
               textAlign: { xs: 'center', md: 'left' },
               alignItems: { xs: 'center', md: 'flex-start' },
@@ -53,12 +56,42 @@ export function HeroSection({ data, isMiltechMode }) {
             ))}
           </Stack>
 
+          {isMiltechMode && data.currentRole && (
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              sx={{
+                border: '1px solid',
+                borderColor: 'divider',
+                bgcolor: 'rgba(255, 140, 0, 0.05)',
+                px: 1.5,
+                py: 0.6,
+              }}
+            >
+              <Box className="status-dot status-dot--live" />
+              <Typography variant="overline" color="text.secondary">
+                {data.currentRole.label}:
+              </Typography>
+              <Typography variant="overline" color="secondary.main">
+                {data.currentRole.value}
+              </Typography>
+            </Stack>
+          )}
+
           <Stack spacing={2}>
             <Typography variant="h1">
-              {data.name}
+              <Box
+                component="span"
+                className="glitch-text"
+                data-text={data.name}
+                sx={{ display: 'inline-block' }}
+              >
+                <DecryptText text={data.name} duration={650} />
+              </Box>
             </Typography>
             <Typography variant="h2" color="secondary.main" sx={{ maxWidth: 640 }}>
-              {data.title}
+              <DecryptText text={data.title} duration={550} delay={180} />
             </Typography>
             <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 620 }}>
               {data.tagline}
@@ -78,6 +111,37 @@ export function HeroSection({ data, isMiltechMode }) {
               Direct Contact
             </Button>
           </Stack>
+
+          <Divider sx={{ width: '100%', maxWidth: 640, borderColor: 'divider' }} />
+
+          <AnimatedSection
+            variants={staggerContainerVariants}
+            sx={{ width: '100%' }}
+          >
+            <Grid container spacing={{ xs: 2, sm: 3 }} justifyContent={{ xs: 'center', md: 'flex-start' }}>
+              {heroStats.map((stat) => (
+                <Grid key={stat.label} item xs={6} sm="auto">
+                  <Box
+                    component={motion.div}
+                    variants={staggerItemVariants}
+                    sx={{ textAlign: { xs: 'center', md: 'left' } }}
+                  >
+                    <Typography
+                      className="hero-stat-value metric-value"
+                      variant="h3"
+                      color="secondary.main"
+                      sx={{ fontSize: { xs: '1.5rem', md: '1.85rem' } }}
+                    >
+                      <DecryptText text={stat.value} duration={500} />
+                    </Typography>
+                    <Typography variant="overline" color="text.secondary" sx={{ whiteSpace: 'nowrap' }}>
+                      {stat.label}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </AnimatedSection>
           </Stack>
         </AnimatedSection>
       </Container>
